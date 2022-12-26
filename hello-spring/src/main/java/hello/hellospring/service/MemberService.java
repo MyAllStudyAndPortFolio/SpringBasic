@@ -9,14 +9,18 @@ import java.util.Optional;
 
 public class MemberService {
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    private final MemberRepository memberRepository;
+
+    public MemberService(MemberRepository memberRepository){
+        this.memberRepository = memberRepository;
+    }
 
     /**
      * 회원가입
      */
     public Long join(Member member) {
         // 같은 이름이 있는 중복 회원 X
-        Optional<Member> result = memberRepository.findByName(member.getName());
+        //Optional<Member> result = memberRepository.findByName(member.getName());
 
         // 바로 꺼낸다면
         // result.get();
