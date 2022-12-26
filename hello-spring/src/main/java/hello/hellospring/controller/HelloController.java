@@ -30,6 +30,7 @@ public class HelloController {
     @GetMapping("hello-api")
     //json 방식으로 바꿔서 반환
     //httpMessageConverter 동작
+    // 데이터 저장소가 선정 안된 가상 시나리오 선정 및 진행
     @ResponseBody
     public Hello helloApi(@RequestParam("name") String name) {
         Hello hello = new Hello();
