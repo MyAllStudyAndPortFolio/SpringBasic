@@ -31,7 +31,7 @@ class MemberServiceIntegrationTest {
         //given
         Member member = new Member();
         // spring 이면 그동안 db 에서 쌓이므로 불가
-        member.setName("hello2");
+        member.setName("hello43");
         //when
         Long saveId = memberService.join(member);
 
