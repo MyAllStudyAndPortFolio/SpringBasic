@@ -1,5 +1,6 @@
 package hello.core.member;
 
+// member basic class about all info
 public class Member {
 
     private Long id;

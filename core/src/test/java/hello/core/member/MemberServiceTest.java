@@ -7,6 +7,7 @@ public class MemberServiceTest {
 
     MemberService memberService = new MemberServiceImpl();
 
+    // testing pages;
     @Test
     void join(){
         //given
