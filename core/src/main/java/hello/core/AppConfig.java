@@ -2,6 +2,7 @@ package hello.core;
 
 import hello.core.discount.DiscountPolicy;
 import hello.core.discount.FixDiscountPolicy;
+import hello.core.discount.RateDiscountPolicy;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemberService;
 import hello.core.member.MemberServiceImpl;
@@ -23,7 +24,9 @@ public class AppConfig {
         return new MemoryMemberRepository();
     }
     public DiscountPolicy discountPolicy(){
-        return new FixDiscountPolicy();
+        // fix 에서 Rate 로 교체한다. 구성영역 변경
+        //return new FixDiscountPolicy();
+        return new RateDiscountPolicy();
     }
 
     public OrderService orderService(){
