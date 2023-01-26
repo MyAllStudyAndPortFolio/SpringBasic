@@ -10,6 +10,9 @@ public class MemberServiceImpl implements MemberService{
     public MemberServiceImpl(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
+    public MemberRepository getMemberRepository(){
+        return memberRepository;
+    }
 
     @Override
     public void join(Member member) {
@@ -20,4 +23,6 @@ public class MemberServiceImpl implements MemberService{
     public Member findMember(Long memberId) {
         return memberRepository.findById(memberId);
     }
+
+
 }

@@ -18,6 +18,9 @@ public class AppConfig {
     //AppConfig Refactoring
     // 스프링 Bean은 @Bean 이 붙은 메서드 명을 스프링 빈의 이름으로 사용
 
+    //@Bean memberService -> new MemorymemberRepository()
+    //@Bean orderService ->
+
     @Bean
     public MemberService memberService(){
         return new MemberServiceImpl(memberRepository());
@@ -40,7 +43,8 @@ public class AppConfig {
     @Bean
     public OrderService orderService(){
         return new OrderServiceImpl(
-                memberRepository(),discountPolicy());
+                memberRepository(),
+                discountPolicy());
     }
 
 

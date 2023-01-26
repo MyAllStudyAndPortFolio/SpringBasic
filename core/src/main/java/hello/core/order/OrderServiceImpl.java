@@ -15,6 +15,7 @@ public class OrderServiceImpl implements OrderService{
         this.discountPolicy = discountPolicy;
     }
 
+
     //private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
     //인터페이스에만 의존하도록 설계와 코드 변경 ->
    //private DiscountPolicy discountPolicy;
@@ -27,4 +28,9 @@ public class OrderServiceImpl implements OrderService{
 
         return new Order(memberId,itemName,itemPrice,discountPrice);
     }
+
+    public MemberRepository getMemberRepository(){
+        return memberRepository;
+    }
+
 }
