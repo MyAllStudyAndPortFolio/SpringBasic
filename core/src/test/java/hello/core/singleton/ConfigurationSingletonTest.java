@@ -30,4 +30,15 @@ public class ConfigurationSingletonTest {
 
 
     }
+
+    @Test
+    void configurationDeep(){
+        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+        AppConfig bean = ac.getBean(AppConfig.class);
+
+        // 싱글톤이 되도록 보장
+        System.out.println("bean.getClass() = " + bean.getClass());
+
+
+    }
 }

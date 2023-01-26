@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 //AppConfig 는 생성한 객체 인스턴스의 참조를 "생성자를 통해서 주입" 해준다.
 
+// if 만약 @Configuration을 뺀다고 하면 어떻게 될까?
 @Configuration
 public class AppConfig {
     //AppConfig Refactoring
@@ -21,8 +22,16 @@ public class AppConfig {
     //@Bean memberService -> new MemorymemberRepository()
     //@Bean orderService ->
 
+    //call AppConfig.memberService
+    //call AppConfig.memberRepository
+    //call AppConfig.memberRepository
+    //call AppConfig.orderService
+    //call AppConfig.memberRepository
+
     @Bean
     public MemberService memberService(){
+
+        System.out.println(" call AppConfig.memberService ");
         return new MemberServiceImpl(memberRepository());
     }
     /**
@@ -32,6 +41,8 @@ public class AppConfig {
      *  */
     @Bean
     public MemberRepository memberRepository() {
+
+        System.out.println(" call AppConfig.memberRepository ");
         return new MemoryMemberRepository();
     }
     @Bean
@@ -42,6 +53,7 @@ public class AppConfig {
     }
     @Bean
     public OrderService orderService(){
+        System.out.println(" call AppConfig.orderService ");
         return new OrderServiceImpl(
                 memberRepository(),
                 discountPolicy());
